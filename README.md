@@ -24,6 +24,17 @@ make install  (depending on where your python packages are installed, this may n
 
 Examples are provided in the examples directory, with a worked explanation of the code in the [tutorial](https://allison-group.github.io/indigox/tutorials.html). Documentation can be built by make doc, or a full version is available online at https://allison-group.github.io/indigox/
 
+NOTES: 
+We've had problems with the external pybind11 submodule failing on checkout with a message similar to: 
+```
+fatal: The remote end hung up unexpectedly
+Fetched in submodule path 'external/pybind11', but it did not contain 3e7158f43d8d19b67e2d4762045a7f4bba7c477d. Direct fetching of that commit failed.
+```
+There's a simple workaround by navigating into the folder and checking out there:
+```
+cd external/pybind11
+git checkout master
+```
 If you are developing using the python examples, note that a full build and reinstallation of indigox is needed for the example to pick up on changes. The example relies on the installed indigox version. 
 
 ## Python Bindings
